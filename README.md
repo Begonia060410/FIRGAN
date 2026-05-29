@@ -14,8 +14,24 @@ Fig. 2 Conceptual framework of the proposed FIR-GAN.(a) Full architecture of the
 
 A permanent archived version with DOI is available at: https://doi.org/10.5281/zenodo.20289332.
 
-If this work has been helpful to you, please cite the following LaTeX source code.
+# Running Note
 
+
+- # *Train*
+  *1.  Change the ir and vis path in ./python/train in line 115-116, data_dir_ir and data_dir_vi.The real path of cropped vis img is data_dir_vi+img_crop and data_dir_vi+label_crop.The real path of cropped ir img is data_dir_ir+img_crop and data_dir_ir+label_crop*
+  
+  *2.  `python ./python/main.py`*
+
+- # *Test*
+  *1.  Prepare test dataset in ./Test_ir and ./Test_vi*
+  
+  *2.  RGB image*
+   `python test_color.py`
+  
+  *2.  Gray image*
+  `python test_gray.py`
+  
+If this work has been helpful to you, please cite the following LaTeX source code: 
 @article{FIRGAN2026,
 
 title={High-Fidelity Multimodal Image Fusion with Frequency-Domain Attention for Robust Visual Detection},
