@@ -16,7 +16,6 @@ A permanent archived version with DOI is available at: https://doi.org/10.5281/z
 
 # Running Note
 
-
 - # *Train*
   *1.  Change the ir and vis path in ./python/train in line 115-116, data_dir_ir and data_dir_vi.The real path of cropped vis img is data_dir_vi+img_crop and data_dir_vi+label_crop.The real path of cropped ir img is data_dir_ir+img_crop and data_dir_ir+label_crop*
   
@@ -31,7 +30,7 @@ A permanent archived version with DOI is available at: https://doi.org/10.5281/z
   *2.  Gray image*
   `python test_gray.py`
   
-#Cite
+# Cite
 If this work has been helpful to you, please cite the following LaTeX source code: 
 
 @article{FIRGAN2026,
