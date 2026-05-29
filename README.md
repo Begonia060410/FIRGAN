@@ -1,4 +1,4 @@
-# FIR_GAN
+# FIR_GAN: High-Fidelity Multimodal Image Fusion with Frequency-Domain Attention for Robust Visual Detection
 
 High-Fidelity Multimodal Image Fusion with Frequency-Domain Attention for Robust Visual Detection
 
