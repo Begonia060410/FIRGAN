@@ -2,6 +2,8 @@
 
 High-Fidelity Multimodal Image Fusion with Frequency-Domain Attention for Robust Visual Detection
 
+# Abstract 
+
 Multimodal image fusion integrates complementary information across modalities to improve the reliability of high-level vision tasks such as object detection. However, heterogeneous distributions, misalignment artifacts, and inefficient training limit fusion quality and downstream performance. This work introduces a high-fidelity fusion framework dedicated to detection scenarios, featuring a dual-branch CNN-Transformer architecture and a statistical frequency-domain attention mechanism to enhance feature alignment and detail preservation. A block-level index-guided optimization strategy is proposed to reduce computational cost while stabilizing training. Here we show the method improves VIF by 0.28 on TNO and mAP@0.5 by 10.3% on DroneVehicle compared to state-of-the-art approaches. The framework effectively balances fusion fidelity and efficiency, supporting robust cross-modal perception for real-world vision systems.
 
 
@@ -11,6 +13,8 @@ Fig. 1 Visual comparison of different image fusion algorithms
 Fig. 2 Conceptual framework of the proposed FIR-GAN.(a) Full architecture of the system.(b) Patch-level IQA index–guided training optimization strategy.(c) Structure of the generator network.(d) Structure of the discriminator network.
 
 
+
+# DOI 
 
 A permanent archived version with DOI is available at: https://doi.org/10.5281/zenodo.20289332.
 
