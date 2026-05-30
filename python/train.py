@@ -65,10 +65,10 @@ class Train:
             self.quality_aware=qem(ir_labels,vi_labels,d_train_number,index_,batch_size)
 
             self.opt_discriminator.zero_grad()
-            #判别器
-            real_ir_pro=self.discriminator(real_ir)#tensor:2;[[1,2],[1,2]]
-            real_vi_pro=self.discriminator(real_vi)#tensor:2;[[1,2],[1,2]]
-            fake_fused_pro=self.discriminator(fusion_out)#tensor:2;[[1,128,128],[1,128,128]]
+            
+            real_ir_pro=self.discriminator(real_ir)
+            real_vi_pro=self.discriminator(real_vi)
+            fake_fused_pro=self.discriminator(fusion_out)
 
             d1_loss=self.d_loss_ob(real_vi_pro,1,0)+self.d_loss_ob(real_ir_pro,0,1)
 
@@ -146,10 +146,9 @@ class Train:
                 g_loss,d_loss=self.train_step(ir_images,ir_labels,vi_images,vi_labels,index_,batch_size)
 
                 if idx%1 == 0:
-                    # 记录结束时间
+                   
                     end_time = time.time()
 
-                    # 计算并打印执行时间
                     elapsed_time = end_time - start_time
 
                     print('Epoch {}/{}, Step {}/{}, gen_loss = {:.4f}, dis_loss = {:.4f}'.format(epoch, self.config.epoch, idx,
