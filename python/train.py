@@ -60,8 +60,8 @@ class Train:
 
         for d_train_number in range(2):
 
-            real_ir=ir_labels#tensor:2;[[1,128,128],[1,128,128]]
-            real_vi=vi_labels#tensor:2;[[1,128,128],[1,128,128]]
+            real_ir=ir_labels
+            real_vi=vi_labels
             self.quality_aware=qem(ir_labels,vi_labels,d_train_number,index_,batch_size)
 
             self.opt_discriminator.zero_grad()
@@ -107,8 +107,7 @@ class Train:
     def run(self):
         # train dataset
         logging.info(f'dataset define!')
-
-        # # img--->h5 file 生成裁减图像
+        
         # input_setup(self.config, r"E:\begoina\fir-gan\dataset\vehicle\vis", ir_flag=True)
         # input_setup(self.config, r"E:\begoina\fir-gan\dataset\vehicle\ir", ir_flag=False)
 
