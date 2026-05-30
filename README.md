@@ -30,6 +30,11 @@ A permanent archived version with DOI is available at: https://doi.org/10.5281/z
   
   *2.  Gray image*
   `python test_gray.py`
+
+# Text images and Weight files
+The Baidu Pan links for the test images, fused images, and weight files are:
+
+FIR_GAN: Url: https://pan.baidu.com/s/1-Qr8eMiidPbjExQxTgjMiA?pwd=6ce6  passage: 6ce6
   
 # Citation
 If this work has been helpful to you, please cite the following code: 
