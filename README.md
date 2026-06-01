@@ -43,7 +43,7 @@ If this work has been helpful to you, please cite the following code:
 
 title={High-Fidelity Multimodal Image Fusion with Frequency-Domain Attention for Robust Visual Detection},
 
-journal={The Visual Computer},
+journal={Signal Image and Video Processing},
 
 year={2026}
 
