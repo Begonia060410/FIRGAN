@@ -43,6 +43,8 @@ If this work has been helpful to you, please cite the following code:
 
 title={High-Fidelity Multimodal Image Fusion with Frequency-Domain Attention for Robust Visual Detection},
 
+author={Wang, Huiji and Huang, Dandan and Liu, Zhi and Han, Zhichao and Wang, Xingzhao and Fan, Jian and Zhang, Rui}
+
 journal={Signal Image and Video Processing},
 
 year={2026}
