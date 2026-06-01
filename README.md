@@ -13,7 +13,7 @@ Fig. 1 Visual comparison of different image fusion algorithms
 
 # DOI 
 
-A permanent archived version with DOI is available at: https://doi.org/10.5281/zenodo.20289332.
+A permanent archived version with DOI is available at: https://doi.org/10.5281/zenodo.20289024.
 
 # Running Note
 
