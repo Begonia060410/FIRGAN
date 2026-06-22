@@ -1,4 +1,4 @@
-# FIR_GAN: High-Fidelity Infrared–Visible Image Fusion for Detection Tasks
+# FIRGAN: High-Fidelity Infrared–Visible Image Fusion for Detection Tasks
 
 High-Fidelity Infrared–Visible Image Fusion for Detection Tasks
 
@@ -9,6 +9,7 @@ Infrared-visible image fusion aims to generate informative representations for b
 
 <img width="2431" height="563" alt="1" src="https://github.com/user-attachments/assets/71cd1c81-fb73-4801-b82c-2eb70c01dda0" />
 Fig. 1 Visual comparison of different image fusion algorithms
+
 
 <img width="1303" height="1193" alt="FIR_Frame-v2" src="https://github.com/user-attachments/assets/1302a6c5-f69a-4bf4-9647-bbb563db5d4a" />
 Fig. 2 Overall architecture of FIR-GAN.
