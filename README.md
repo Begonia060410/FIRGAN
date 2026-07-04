@@ -56,4 +56,9 @@ year={2026}
 
 }
 ## License
-MIT License, see LICENSE file.
+All novel fusion modules proposed in this paper are distributed under **Apache License 2.0**,
+See `LICENSE` for full license text and `NOTICE` for copyright.
+
+## Acknowledgements
+This work uses AT-GAN as the comparison baseline.
+All original copyright information of AT-GAN is fully reserved in unmodified source files.
