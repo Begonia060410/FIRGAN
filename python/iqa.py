@@ -1,5 +1,5 @@
 """
-Modified based on AT-GAN baseline (Original Author: yujing_rao, 2023)
+Modified based on AT-GAN baseline (Original Author: yujing_rao, 2022)
 Copyright (c) 2026 Huiji Wang
 Licensed under the Apache License, Version 2.0 - see LICENSE and NOTICE file
 """
