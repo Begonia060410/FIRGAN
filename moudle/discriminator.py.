@@ -1,3 +1,10 @@
+"""
+File       : main.py
+Original Author     ：yujing_rao
+Baseline Paper: AT-GAN: A generative adversarial network with attention and transition for infrared and visible image fusion
+This file is unmodified baseline code.
+Our proposed innovative modules are covered under Apache 2.0 License .
+"""
 from torch import nn
 
 
