@@ -1,7 +1,7 @@
 clc
 clear all
-names = {'FusionGAN_restored','tardal_restored_drone','diff','SPDFusion','ATGAN_org100','Atganorg50','ATGAN_shuffle','ATGAN_cnn_trans','ATGAN_spect_Restor','ATGAN_shuffle_spect_mscn','onlyspect_mscn'};
-rows = ['A','B','C','D','E','F','G','H','I','J','K'] ;
+names = {'FusionGAN','tardal','diff','SPDFusion','Atganorg50','Ours'};
+rows = ['A','B','C','D','E','F'] ;
 easy = 1; 
 dataset = 'vehicle';
 row_name1 = 'row1';
@@ -15,14 +15,14 @@ for i = 1 : length(names)
     row = rows(i);
     row_name = strrep(row_name1, 'row', row);
     row_data = strrep(row_data1, 'row', row);
-    fileFolder=fullfile('../Image/Source-Image', dataset, 'ir'); % Ô´Í¼ÏñAËùÔÚÎÄ¼ş¼Ğ ´Ë´¦ÊÇ'Evaluation\Image\Source-Image\TNO\ir'
+    fileFolder=fullfile('../Image/Source-Image', dataset, 'ir'); % æºå›¾åƒAæ‰€åœ¨æ–‡ä»¶å¤¹ æ­¤å¤„æ˜¯'Evaluation\Image\Source-Image\TNO\ir'
     dirOutput=dir(fullfile(fileFolder,'*.*'));
     fileNames = {dirOutput.name};
     [m, num] = size(fileNames);   
-    ir_dir = fullfile('../Image/Source-Image', dataset, 'ir'); % Ô´Í¼ÏñAËùÔÚÎÄ¼ş¼Ğ ´Ë´¦ÊÇ'Evaluation\Image\Source-Image\TNO\ir'
-    vi_dir = fullfile('../Image/Source-Image', dataset, 'vi'); % Ô´Í¼ÏñBËùÔÚÎÄ¼ş¼Ğ ´Ë´¦ÊÇ'Evaluation\Image\Source-Image\TNO\vi'
+    ir_dir = fullfile('../Image/Source-Image', dataset, 'ir'); % æºå›¾åƒAæ‰€åœ¨æ–‡ä»¶å¤¹ æ­¤å¤„æ˜¯'Evaluation\Image\Source-Image\TNO\ir'
+    vi_dir = fullfile('../Image/Source-Image', dataset, 'vi'); % æºå›¾åƒBæ‰€åœ¨æ–‡ä»¶å¤¹ æ­¤å¤„æ˜¯'Evaluation\Image\Source-Image\TNO\vi'
     Fused_dir = '../';
-    Fused_dir = fullfile(Fused_dir, 'Image', 'Algorithm', strcat(cell2mat(names(i)), '_', dataset)); % ÈÚºÏ½á¹ûËùÔÚÎÄ¼ş¼Ğ ´Ë´¦ÊÇ 'Evaluation\Image\Algorithm\DenseFuse_TNO'
+    Fused_dir = fullfile(Fused_dir, 'Image', 'Algorithm', strcat(cell2mat(names(i)), '_', dataset)); % èåˆç»“æœæ‰€åœ¨æ–‡ä»¶å¤¹ æ­¤å¤„æ˜¯ 'Evaluation\Image\Algorithm\DenseFuse_TNO'
     EN_set = [];    SF_set = [];SD_set = [];PSNR_set = [];
     MSE_set = [];MI_set = [];VIF_set = []; AG_set = [];
     CC_set = [];SCD_set = []; Qabf_set = []; DeltaE_set = [];
@@ -75,13 +75,13 @@ for i = 1 : length(names)
             fprintf('Fusion Method:%s, Image Name: %s\n', cell2mat(names(i)), fileNames{j})
         end
     end
-    save_dir = '../Metric'; %´æ·ÅExcel½á¹ûµÄÎÄ¼ş¼Ğ
+    save_dir = '../Metric'; %å­˜æ”¾Excelç»“æœçš„æ–‡ä»¶å¤¹
     if exist(save_dir,'dir')==0
         mkdir(save_dir);
     end
-    %% ½«²âÊÔ½á¹ûĞ´Èë Excel£¬ ´Ë´¦²ÉÓÃwritetable£¬ µÚÒ»ĞĞ¿ÉÄÜ»áÓĞÎÊÌâ£¬Ëã·¨ÃûÔÚµÚ¶şĞĞ£¬ÆÀ¹À½á¹û´ÓµÚÈıĞĞ¿ªÊ¼
-    file_name = fullfile(save_dir, strcat('Metric_',formatted_time,'_',dataset, '.xlsx')); %´æ·ÅExcelÎÄ¼şµÄÎÄ¼şÃû
-    % file_name = fullfile(save_dir, strcat('Metric_', dataset, '.xlsx')); %´æ·ÅExcelÎÄ¼şµÄÎÄ¼şÃû
+    %% å°†æµ‹è¯•ç»“æœå†™å…¥ Excelï¼Œ æ­¤å¤„é‡‡ç”¨writetableï¼Œ ç¬¬ä¸€è¡Œå¯èƒ½ä¼šæœ‰é—®é¢˜ï¼Œç®—æ³•ååœ¨ç¬¬äºŒè¡Œï¼Œè¯„ä¼°ç»“æœä»ç¬¬ä¸‰è¡Œå¼€å§‹
+    file_name = fullfile(save_dir, strcat('Metric_',formatted_time,'_',dataset, '.xlsx')); %å­˜æ”¾Excelæ–‡ä»¶çš„æ–‡ä»¶å
+    % file_name = fullfile(save_dir, strcat('Metric_', dataset, '.xlsx')); %å­˜æ”¾Excelæ–‡ä»¶çš„æ–‡ä»¶å
     if easy ==1
         SD_table = table(SD_set');
         PSNR_table = table(PSNR_set');
