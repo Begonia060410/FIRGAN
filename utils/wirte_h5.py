@@ -20,14 +20,16 @@ def input_setup(config, data_dir, ir_flag, index=0):
 
     # Load data path
     if config.is_train:
-        
+
         data = prepare_data(config, dataset=data_dir)
     else:
         data = prepare_data(config, dataset=data_dir)
 
     padding = abs(config.image_size - config.label_size) / 2  # 6
 
+    IMGcount = 0
     for i in range(len(data)):
+        IMGcount += 1
 
         input_ = imread(data[i])
 
@@ -46,6 +48,7 @@ def input_setup(config, data_dir, ir_flag, index=0):
                             int(y):int(y + config.image_size)]
                 sub_label = label_[int(x + padding):int(x + padding + config.label_size),
                             int(y + padding):int(y + padding + config.label_size)]  # [21 x 21]
+
                 # Make channel value
                 if data_dir == "Train":
                     sub_input = cv2.resize(sub_input, (config.image_size / 4, config.image_size / 4),
@@ -55,11 +58,17 @@ def input_setup(config, data_dir, ir_flag, index=0):
                                            interpolation=cv2.INTER_CUBIC)
                     sub_label = sub_label.reshape([config.label_size / 4, config.label_size / 4, 1])
                 else:
+
+
                     sub_input = sub_input.reshape([config.image_size, config.image_size, 3])
                     sub_label = sub_label.reshape([config.label_size, config.label_size, 3])
+                    # save
 
-                save(img_count, sub_input, 'img',ir_flag)
-                save(img_count, sub_label, 'label',ir_flag)
+                    sub_input = cv2.resize(sub_input,(60,60), interpolation=cv2.INTER_CUBIC)
+                    sub_label = cv2.resize(sub_label,(60,60), interpolation=cv2.INTER_CUBIC)
+
+                save(IMGcount,img_count, sub_input, 'img',ir_flag)
+                save(IMGcount,img_count, sub_label, 'label',ir_flag)
 
 
 def make_data(config, data, label, data_dir):
@@ -101,23 +110,23 @@ import numpy as np
 from PIL import Image
 
 
-def save(count,img,flag,ir_flag):
+def save(IMGcount,count,img,flag,ir_flag):
     image = Image.fromarray(np.uint8(img * 255))
     if ir_flag:
         if flag == 'label':
-            image.save(r'E:\begoina\fir-gan\dataset\vehicle\ir\label_crop/' + str(count) + '.png')
+            image.save(r'E:\begoina\firGan\dataset\dron_cropNew\ir\label_crop/' + str(IMGcount) + '_'+str(count) + '.png')
             print('success'+str(count))
         elif flag == 'img':
-            image.save(r'E:\begoina\fir-gan\dataset\vehicle\ir\img_crop/'+ str(count) + '.png')
+            image.save(r'E:\begoina\firGan\dataset\dron_cropNew\ir\img_crop/'+ str(IMGcount) + '_'+ str(count) + '.png')
             print('success'+str(count))
         else:
             raise SystemExit(0)
     else:
         if flag == 'label':
-            image.save(r'E:\begoina\fir-gan\dataset\vehicle\vis\label_crop/' + str(count) + '.png')
+            image.save(r'E:\begoina\firGan\dataset\dron_cropNew\vis\label_crop/' +str(IMGcount) + '_'+ str(count) + '.png')
             print('success'+str(count))
         elif flag == 'img':
-            image.save(r'E:\begoina\fir-gan\dataset\vehicle\vis\img_crop/'+ str(count) + '.png')
+            image.save(r'E:\begoina\firGan\dataset\dron_cropNew\vis\img_crop/'+ str(IMGcount) + '_'+str(count) + '.png')
             print('success'+str(count))
         else:
             raise SystemExit(0)
