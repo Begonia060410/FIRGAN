@@ -3,7 +3,7 @@ Copyright 2026 Huiji Wang
 This software implements a novel infrared-visible image fusion network.
 
 Third-Party Baseline:
-AT-GAN (Yujing Rao, 2023), academic MIT-style open baseline without explicit LICENSE.
+AT-GAN (Yujing Rao, 2022), academic MIT-style open baseline without explicit LICENSE.
 All original copyright headers of AT-GAN are retained in inherited source files.
 
 Licensed under the Apache License, Version 2.0;
