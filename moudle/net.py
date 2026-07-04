@@ -1,3 +1,15 @@
+# !/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+This file is newly created by us, the core module is reproduced from Restormer:
+Restormer: Efficient Transformer for High-Resolution Image Restoration
+Original Author: Syed Waqas Zamir et al., 2022
+
+Our self-designed overall fusion framework are licensed under Apache 2.0.
+Copyright (c) 2026 Huiji Wang
+Licensed under the Apache License, Version 2.0
+See LICENSE and NOTICE for full license and patent statement.
+"""
 import torch
 import torch.nn as nn
 import math
