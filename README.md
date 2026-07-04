@@ -55,3 +55,5 @@ journal={The Visual Computer},
 year={2026}
 
 }
+## License
+MIT License, see LICENSE file.
