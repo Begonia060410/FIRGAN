@@ -50,7 +50,7 @@ title={High-Fidelity Infrared–Visible Image Fusion for Detection Tasks},
 
 author={Wang, Huiji and Huang, Dandan and Liu, Zhi and Han, Zhichao and Wang, Xingzhao and Fan, Jian and Zhang, Rui}
 
-journal={The Visual Computer},
+journal={Remote Sensing},
 
 year={2026}
 
